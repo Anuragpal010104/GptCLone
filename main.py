@@ -15,15 +15,15 @@ mongo = PyMongo(app)
 oauth = OAuth(app)
 google = oauth.register(
     name='google',
-    client_id='413334768272-vllf2oa3tmmgtbmuhhsgkfor55ijbaer.apps.googleusercontent.com',
-    client_secret='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',
-    authorize_url='https://accounts.google.com/o/oauth2/auth',
+    client_id=proccess.env.GOOGLE_CLIENT_ID,
+    client_secret=proccess.env.GOOGLE_CLIENT_SECRET,
+    authorize_url=proccess.env.GOOGLE_AUTHORIZE_URL,
     authorize_params=None,
-    access_token_url='https://accounts.google.com/o/oauth2/token',
+    access_token_url=proccess.env.GOOGLE_ACCESS_TOKEN_URL,
     access_token_params=None,
     refresh_token_url=None,
-    redirect_uri='http://localhost:5000/login/google/callback',
-    client_kwargs={'scope': 'openid profile email'},
+    redirect_uri=proccess.env.GOOGLE_REDIRECT_URI,
+    client_kwargs={'scope': proccess.env.GOOGLE_CLIENT_SCOPE},
 )
 
 @app.route("/")

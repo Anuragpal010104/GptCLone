@@ -4,7 +4,7 @@ from openai import OpenAI
 from authlib.integrations.flask_client import OAuth
 
 client = OpenAI(
-    api_key="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"
+    api_key=process.env.OPENAI_API_KEY
 )
 
 app = Flask(__name__)

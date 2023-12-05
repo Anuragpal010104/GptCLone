@@ -8,7 +8,7 @@ client = OpenAI(
 )
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://Anupal01:mbCoUkn8MpCRi5gV@cluster0.dpbyy3b.mongodb.net/ChatGPT"
+app.config["MONGO_URI"] = proccess.env.MONGO_URI
 mongo = PyMongo(app)
 
 # Authlib configuration for Google OAuth
